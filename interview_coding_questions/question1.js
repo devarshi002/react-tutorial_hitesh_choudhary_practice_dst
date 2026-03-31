@@ -29,3 +29,6 @@ console.log(c);
 
 console.log(a);
 console.log(b);
+
+
+// console.log(0123);//octal
