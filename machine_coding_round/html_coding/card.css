@@ -4,6 +4,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+
+.container {
+    display: flex;
+    gap: 20px;
 }
 
 
@@ -37,4 +43,9 @@ body {
     color: aliceblue;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.card button:hover{
+    background-color: rgb(28, 230, 28);
+    color: black;
 }
