@@ -4,3 +4,11 @@ btn.addEventListener("click",()=>{
     console.log("Clicked");
     
 })
+
+
+//create ele
+
+const div = document.createElement("div");
+div.textContent="hello"
+
+document.body.appendChild(div)
