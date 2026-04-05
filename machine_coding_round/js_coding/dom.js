@@ -12,3 +12,7 @@ const div = document.createElement("div");
 div.textContent="hello"
 
 document.body.appendChild(div)
+
+div.classList.add("active")
+div.classList.remove("active")
+div.classList.toggle("active")
