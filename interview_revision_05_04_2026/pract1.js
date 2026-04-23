@@ -38,8 +38,25 @@ return res
 }
 
 
+function largestElement(arr) {
+    let a = -Infinity
+    
+    for (let i = 0; i<arr.length; i++) {
+        if(arr[i] > a) {
+            a = arr[i]
+        }
+    }
+
+    return a
+
+
+}
+
+
 let arr = [15, 10, 30, 40, 5, 10, 30]
 
 
 
 console.log(findDuplicate(arr));
+console.log(largestElement(arr));
+
