@@ -1,0 +1,30 @@
+function wordPattern(pattern, s){
+    let words = s.split(" ")
+
+    if(pattern.length !== words.length) return false;
+
+    let charToWord = new Map();
+    let wordToChar = new Map();
+
+    for(let i = 0; i<pattern.length; i++){
+        let char = pattern[i];
+        let word = words[i];
+
+        if(charToWord.has(char)){
+            if(charToWord.get(char) !== word) return false
+        }
+        else {
+            charToWord.set(char, word)
+        }
+
+        if(wordToChar.has(word)){
+            if(wordToChar.get(word) !== char) return false
+        }
+        else {
+            wordToChar.set(word,char)
+        }
+    }
+    return true
+}
+
+console.log(wordPattern("abba","dog cat cat dog"));
