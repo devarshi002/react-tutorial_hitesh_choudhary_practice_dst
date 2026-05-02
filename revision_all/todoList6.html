@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>todo list</h1>
+
+    <div>
+        <input type="text" id="taskInput" placeholder="Enter your task">
+        <button onclick="addTask()" type="submit">submit</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || []
+        tasks.forEach((task, index)=> addToUI(task, index))
+
+        function addTask(){
+            let input = document.getElementById("taskInput")
+            let task = input.value.trim()
+
+            if(task === ""){
+                alert("please enter task")
+                return;
+            }
+            tasks.push(task)
+            localStorage.setItem("tasks",JSON.stringify(tasks))
+            addToUI(task, tasks.length - 1)
+            input.value=""
+        }
+
+        function addToUI(task, index){
+            let li = document.createElement("li")
+            li.textContent=task
+
+            let btn = document.createElement("button")
+            btn.textContent="delete"
+
+            btn.onclick = function() {
+                li.remove()
+
+                tasks.splice(index,1)
+
+                localStorage.setItem("tasks", JSON.stringify(tasks))
+            }
+
+            li.appendChild(btn)
+
+            document.getElementById("taskList").appendChild(li)
+        }
+    </script>
+
+
+</body>
+</html>
