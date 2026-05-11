@@ -11,7 +11,7 @@ function firstUniqueChar(s){
     }
     
     for(let i = 0; i<s.length; i++){
-        if(map.get(s[i]===1)){
+        if(map.get(s[i])===1){
             return i
         }
     }
