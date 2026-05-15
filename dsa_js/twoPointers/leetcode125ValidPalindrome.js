@@ -16,3 +16,4 @@ function validPalindrome(s){
 console.log(validPalindrome("madam"));
 console.log(validPalindrome("A man , wise man"));
 
+
